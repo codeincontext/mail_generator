@@ -1,22 +1,18 @@
 # mail_generator
 
-mail_generator allows you to generate your ActionMailer emails to a file, using sample data.
+Developing email templates has always been a nightmare for me. _mail_generator_ will build your ActionMailer emails into .html and .txt files, so that you can load them in your browser.
 
-It has been tested in Rails 3.0 and Ruby 1.8.7.
+It has been tested in Rails 3.0 and Ruby 1.8.7, and is very much still in development.
 
-## Why?
+## Use
 
-Developing email templates has always been a nightmare for me. This gem will build your ActionMailer emails into .html and .txt files, so that you can load them in your browser.
+    rake mail:generate
 
-## Installation
+## Setup
 
-Include in your Gemfile:
+Add `gem 'mail_generator'` to your gemfile
 
-    gem 'mail_generator'
-
-## Installation
-
-Add a mail_generator.rb file to the config directory:
+Add a 'mail_generator.rb' file to the config directory:
 
     UserMailer.generate_samples do
       mail :creation_message,           User.last
@@ -30,11 +26,9 @@ Add a mail_generator.rb file to the config directory:
       mail :api_approval_notification,  User.last,    Service.last
     end
 
-I hope this format is fairly self-explanatory.
+I hope this format is fairly self-explanatory. It allows you to specify each of your mailers, each of your email methods, and sample data.
 
-## Use
 
-    rake mail:generate
 
 ## License
 
@@ -44,4 +38,4 @@ This project is licensed under the [Don't Be a Dick License][0], version 0.1, an
 
 * [Adam Howard](https://github.com/skattyadz)
 
-[0]: http://github.com/SFEley/candy/blob/master/LICENSE.markdown
+[0]: http://github.com/skattyadz/mail_generator/blob/master/LICENSE.md
