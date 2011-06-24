@@ -1,24 +1,12 @@
 require "mail_generator/version"
 require "mail_generator/generator"
+require "mail_generator/action_mailer"
 require 'action_mailer'
 
 module MailGenerator
   
-  module MailerExtensions
-    def self.included(base)
-      base.extend(ClassMethods)
-    end
-
-    module ClassMethods
-      def generate_samples(&block)
-        MailGenerator::Generator.new(self, &block)
-      end
-    end
-  end
-  
-  
   class Railtie < ::Rails::Railtie
-    ActionMailer::Base.send :include, MailGenerator::MailerExtensions
+    ::ActionMailer::Base.send :include, MailGenerator::ActionMailer
     rake_tasks do
       load "tasks/mail_generator.rake"
     end
