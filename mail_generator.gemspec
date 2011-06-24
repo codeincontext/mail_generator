@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = MailGenerator::VERSION
   s.authors     = ["Adam Howard"]
   s.email       = ["adz@skatty.me"]
-  s.homepage    = ""
+  s.homepage    = "http://skatty.me"
   s.summary     = %q{TODO: Write a gem summary}
   s.description = %q{TODO: Write a gem description}
 
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_development_dependency "rspec", "~> 2.0.0.beta.22"
+  s.add_dependency "actionmailer"
 end
