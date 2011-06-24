@@ -19,6 +19,9 @@ module MailGenerator
   
   class Railtie < ::Rails::Railtie
     ActionMailer::Base.send :include, MailGenerator::MailerExtensions
+    rake_tasks do
+      load "tasks/mail_generator.rake"
+    end
   end
 
 end
