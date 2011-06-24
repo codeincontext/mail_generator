@@ -1,4 +1,3 @@
-require 'action_mailer'
 require 'fileutils'
 
 module MailGenerator
